@@ -46,7 +46,9 @@ def detectFaces(img):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='This is a simple face detection using python and Opencv3.')
+    # input image
     parser.add_argument('-i', '--input', help='Input file name image', required=True)
+    # optional output image
     parser.add_argument('-o', '--output', help='Output file name image', required=False)
     args = parser.parse_args()
 
