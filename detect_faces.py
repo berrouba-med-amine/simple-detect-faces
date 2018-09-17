@@ -17,17 +17,17 @@ import cv2
 # detect face
 def detectFaces(img):
 
-    # clone image to frame
-    frame = img[:,:,:]
-
-    # convert frame to GRAY format
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
     # load face cascade classifier
     face_cascade = cv2.CascadeClassifier('haarcascade/haarcascade_frontalface_alt.xml')
     if face_cascade.empty():
         print("Error Loading cascade classifier", "Unable to load the face	cascade classifier xml file")
         sys.exit()
+
+    # clone image in frame
+    frame = img[:,:,:]
+
+    # convert frame to GRAY format
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # detect rect faces
     face_rects = face_cascade.detectMultiScale(gray, 1.3, 5)
